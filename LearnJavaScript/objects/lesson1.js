@@ -54,3 +54,19 @@ var enchillada = new MexicanFood("enchillada","chicken","red","great!");
 
 enchillada.saySound(); //=> "great!"
 
+// Prototype pattern
+
+function Chips(){};
+Chips.prototype.name = "Generic Chips";
+Chips.prototype.salsa = "Any";
+Chips.prototype.tortilla = "Corn";
+Chips.prototype.howItSounds = "Crunch";
+Chips.prototype.saySound = function() {
+    console.log(this.howItSounds);
+}
+
+var myChip = new Chips();
+myChip.saySound();
+
+
+
