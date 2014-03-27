@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Nan &amp; Bob's</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script>
+			$(document).on('pageinit', function() {
+				$.mobile.page.prototype.options.backBtnText = "Atrás";
+			});
+		</script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="home">
+			<div data-role="header">
+				<h2>Nan &amp; Bob's</h2>
+			</div>
+			<div data-role="content">
+				<a href="#page2" data-role="button">Page 2</a>
+			</div>
+			<div data-role="footer">
+				<h3>
+					123 Fake St. Anywhere USA
+				</h3>
+			</div>
+		</div>
+		<div data-role="page" id="page2" data-add-back-btn="true">
+			<div data-role="header">
+				<h2>Nan &amp; Bob's</h2>
+			</div>
+			<div data-role="content">
+				<p>I am page 2</p>
+			</div>
+			<div data-role="footer">
+				<h3>
+					123 Fake St. Anywhere USA
+				</h3>
+			</div>
+		</div>
+	</body>
+</html>

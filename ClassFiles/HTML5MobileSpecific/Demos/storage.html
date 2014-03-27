@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jazz Calendar - Local Live Jazz Music Events</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="css/storage.css" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <script type="text/javascript">
+  	function html5_storage_support() {
+		try {
+			return 'localStorage' in window && window['localStorage'] !== null;
+		} catch (e) {
+			return false;
+		}
+	}
+  	function save() {
+  		if (html5_storage_support()) {
+  			var name1 = document.getElementById("name1").value;
+  			var name2 = document.getElementById("name2").value;
+  			localStorage.setItem('name1',name1);
+  			localStorage.setItem('name2',name2);
+  		}
+  	}
+
+  	function set() {
+  		if (html5_storage_support()) {
+  			document.getElementById('name1').value = localStorage.getItem('name1');
+  			document.getElementById('name2').value = localStorage.getItem('name2');
+  		}
+  	}
+  </script>
+</head>
+
+<body>
+  <div id="container">
+	<div id="main">
+	  <header>
+		<img src="images/logo.gif" alt="Jazz Calendar" />
+		<h3 id="tagline">Local jazz info</h3>
+	  </header>
+	  <nav>
+		<ul>
+		  <li><a href="index.html">Home</a></li>
+		  <li><a href="performances.html">Performances</a></li>
+		  <li><a href="about.html">About</a></li>
+		  <li><a href="contact.html">Contact</a></li>
+		</ul>
+	  </nav>
+	  <div id="maincontent">
+		  <article>
+			<h2>Storage Example</h2>
+			<label for="name1">Name 1</label><br>
+			<input type="text" name="name1" id="name1"><br>
+			<br>
+			<label for="name2">Name 2</label><br>
+			<input type="text" name="name2" id="name2"><br>
+			<br>
+			<button onclick="save()">Save</button>
+			<button onclick="set()">Update from Saved</button>
+		  </article>
+	  </div>
+	  <aside id="sidebar">
+		  <h3>Signup</h3>
+		  <p>Become a member of Jazz Calendar now! <a href="#">Email us</a> to receive frequent notices on upcoming live shows.</p>
+	  </aside>
+	  <footer id="contactinfo">
+		<p>Jazz Calendar
+		<br />123 Fake Street, Sometown, USA | 555-123-4567</p>
+	  </footer>
+	</div>
+  </div>
+</body>
+</html>

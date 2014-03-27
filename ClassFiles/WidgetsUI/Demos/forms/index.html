@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Nan &amp; Bob's</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="home">
+			<div data-role="header">
+				<h2>Nan &amp; Bob's</h2>
+			</div>
+			<div data-role="content">
+				<form action="#" method="post">
+					<!-- 
+						we wrap each label/form control in a "fieldcontain" div - 
+						this aligns the label/control and adds some visual 
+						separation from other fields 
+					-->
+
+					<!-- a standard single-line text field -->
+					<div data-role="fieldcontain">
+						<label for="name">Text Input:</label>
+						<input type="text" name="name" id="name">
+					</div>
+
+					<!-- a "mini" text field -->
+					<div data-role="fieldcontain">
+						<label for="name">Text Input (mini):</label>
+						<input type="text" name="namemini" id="namemini" data-mini="true">
+					</div>
+
+					<!-- a textarea, a multi-line text field -->
+					<div data-role="fieldcontain">
+						<label for="textarea">Textarea:</label>
+						<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+					</div>
+
+					<!-- "search" fields display with a magnifying glass icon on some devices -->
+					<div data-role="fieldcontain">
+						<label for="search">Search Input:</label>
+						<input type="search" name="search-input" id="search-input">
+					</div>
+
+					<!-- a select of data-role "slider" with two options displays as a flip switch -->
+					<div data-role="fieldcontain">
+						<label for="flipswitch" class="ui-hidden-accessible">Flip switch:</label>
+						<select name="flipswitch" id="flipswitch" data-role="slider">
+							<option value="off">Off</option>
+							<option value="on">On</option>
+						</select>
+					</div>
+
+					<!-- a select (dropdown) menu -->
+					<div data-role="fieldcontain">
+						<label for="select-choice-0" class="select">Select menu:</label>
+						<select name="select-choice-0" id="select-choice-1">
+							<option value="opt1">Option 1</option>
+							<option value="opt2">Option 2</option>
+							<option value="opt3">Option 3</option>
+						</select>
+					</div>
+
+					<!-- a slider displays with a numeric value to the left -->
+					<div data-role="fieldcontain">
+						<label for="slider">Slider:</label>
+						<input type="range" name="slider" id="slider" value="50" min="0" max="100" data-highlight="true">
+					</div>
+
+					<!-- the next two fields show checkboxes displayed vertically and horizontally -->
+
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<legend>Vertical Checkboxes:</legend>
+							<input type="checkbox" name="checkbox-1a" id="checkbox-1a">
+							<label for="checkbox-1a">Item 1</label>
+
+							<input type="checkbox" name="checkbox-2a" id="checkbox-2a">
+							<label for="checkbox-2a">Item 2</label>
+
+							<input type="checkbox" name="checkbox-3a" id="checkbox-3a">
+							<label for="checkbox-3a">Item 3</label>
+						</fieldset>
+					</div>
+
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup" data-type="horizontal">
+							<legend>Horizontal Checkboxes:</legend>
+							<input type="checkbox" name="checkbox-6" id="checkbox-6">
+							<label for="checkbox-6">One</label>
+
+							<input type="checkbox" name="checkbox-7" id="checkbox-7">
+							<label for="checkbox-7">Two</label>
+
+							<input type="checkbox" name="checkbox-8" id="checkbox-8">
+							<label for="checkbox-8">Three</label>
+						</fieldset>
+					</div>
+
+					<!-- radio buttons, grouped with a "fieldset" -->
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<legend>Radio Buttons:</legend>
+							<input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked">
+							<label for="radio-choice-1">Radio 1</label>
+
+							<input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2">
+							<label for="radio-choice-2">Radio 2</label>
+
+							<input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3">
+							<label for="radio-choice-3">Radio 3</label>
+						</fieldset>
+					</div>
+
+					<div data-role="fieldcontain">
+						<input type="submit" name="submit-button-1" id="submit-button-1" value="Submit">
+					</div>
+
+				</form>
+			</div>
+			<div data-role="footer">
+				<h3>
+					123 Fake St. Anywhere USA
+				</h3>
+			</div>
+		</div>
+	</body>
+</html>

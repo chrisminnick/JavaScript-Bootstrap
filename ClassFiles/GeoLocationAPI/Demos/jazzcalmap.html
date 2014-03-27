@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jazz Calendar - Local Live Jazz Music Events</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="css/jazzcalmap.css" />
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+</head>
+
+<body>
+  <div id="container">
+    <div id="main">
+      <header>
+        <img src="images/logo.gif" alt="Jazz Calendar" />
+        <h3 id="tagline">Local jazz info</h3>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="performances.html">Performances</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="maincontent">
+          <article>
+			<h2>Local Gig Map</h2>
+			<p>Use the map below to find tonight's local gigs. For supported devices, your current location will show on the map.</p>
+			<div id="mapcontainer"></div>
+			<script type="text/javascript">
+
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(locateSuccess, locateFail);
+				}
+
+				function locateSuccess(loc) {
+					latitude = loc.coords.latitude;
+					longitude = loc.coords.longitude;
+					var coords = new google.maps.LatLng(latitude, longitude);
+
+					//create two fake gig locations, near to the user's current location:
+					var fakegig1_coords = new google.maps.LatLng(latitude - 0.001, longitude + 0.002);
+					var fakegig2_coords = new google.maps.LatLng(latitude - 0.003, longitude - 0.002);
+
+					//set options for the Google Map:
+					var options = {
+						zoom: 15,
+						center: coords,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+
+					};
+
+					//create the Google Map:
+					var map = new google.maps.Map(document.getElementById("mapcontainer"), options);
+
+					//create display text for the map popup window and the popup window
+					var infoWindowText = "<p>You are here. Nearby markers show tonight's gigs.</p>";
+					var infowindow = new google.maps.InfoWindow({
+					    content: infoWindowText
+					});
+
+					//create a marker for the user's current position
+					var marker = new google.maps.Marker({
+						position: coords,
+						map: map
+					});
+
+					//create markers for the two gigs
+					var fakegig1_marker = new google.maps.Marker({
+						position: fakegig1_coords,
+						map: map
+					});
+					var fakegig2_marker = new google.maps.Marker({
+						position: fakegig2_coords,
+						map: map
+					});
+
+					//enable clicking on the current-location marker
+					google.maps.event.addListener(marker, 'click', function() {
+						infowindow.open(map,marker);
+					});
+
+					//popup the current-location window when the page loads
+					google.maps.event.trigger(marker, 'click');
+
+				}
+				function locateFail(geoPositionError) {
+					alert('An unknown error occurred, sorry');
+				}
+			</script>
+          </article>
+      </div>
+      <aside id="sidebar">
+          <h3>Signup</h3>
+          <p>Become a member of Jazz Calendar now! <a href="#">Email us</a> to receive frequent notices on upcoming live shows.</p>
+      </aside>
+      <footer id="contactinfo">
+        <p>Jazz Calendar
+        <br />123 Fake Street, Sometown, USA | 555-123-4567</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

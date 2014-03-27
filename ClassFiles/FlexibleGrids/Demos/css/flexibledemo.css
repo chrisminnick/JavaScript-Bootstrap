@@ -1,0 +1,25 @@
+#container {
+	width:80%;
+	margin:0 auto;
+}
+
+header {
+	background-color:#ccc;
+}
+
+#maincontent {
+	width:62.5%;
+	float:left;
+	background-color:#f00;
+}
+
+#sidebar {
+	width:37.5%;
+	float:right;
+	background:#00f;
+}
+
+#contactinfo {
+	clear: both;
+	background-color:#0f0;
+}

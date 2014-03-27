@@ -1,0 +1,25 @@
+#container {
+	width:960px;
+	margin:0 auto;
+}
+
+header {
+	background-color:#ccc;
+}
+
+#maincontent {
+	width:600px;
+	float:left;
+	background-color:#f00;
+}
+
+#sidebar {
+	width:360px;
+	float:right;
+	background:#00f;
+}
+
+#contactinfo {
+	clear: both;
+	background-color:#0f0;
+}

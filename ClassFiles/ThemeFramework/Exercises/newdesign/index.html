@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Nan & Bob's</title>
+        <!-- link the minified stylesheet downloaded from ThemeRoller -->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile.structure-1.1.0.min.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+        <style>
+            /* add a rule to make the tagline text on the homepage large */
+            /* add a rule to handle the "home" button icon */
+            /* add rules to handle the Glyphish "about", "proprietors", and "history" icons */
+        </style>
+    </head>
+    <body>
+        <div data-role="page" id="home">
+            <div data-role="header">
+                <h2>Nan & Bob's</h2>
+            </div>
+            <div data-role="content">
+                <!-- add a two-column grid to show the large home logo image on the left and the text "<strong>Books, Baked Goodies & More</strong> - locally owned and right downtown." on the right -->
+                <ul data-role="listview">
+                    <!-- add custom icons for these listview links -->
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#proprietors">Proprietors</a></li>
+                    <li><a href="#history">History</a></li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <h3>
+                    123 Fake St. Anywhere USA
+                    <br>Icons from <a href="http://glyphish.com/">Glyphish</a>
+                </h3>
+            </div>
+        </div>
+        <div data-role="page" id="about">
+            <div data-role="header">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <!-- add custom icons for these navbar links -->
+                        <li><a href="#about" class="ui-btn-active ui-state-persist">About Us</a></li>
+                        <li><a href="#proprietors">Proprietors</a></li>
+                        <li><a href="#history">History</a></li>
+                    </ul>
+                </div>
+                <h2>N&B: About Us</h2>
+            </div>
+            <div data-role="content">
+                <p>About us paratus validus foras at praesent usitas probo sino esse vicis sagaciter ratis feugait loquor.</p>
+            </div>
+            <div data-role="footer">
+                <h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+                <!-- add a button pointing to the homepage, with the small Nan & Bob's logo -->
+            </div>
+        </div>
+        <div data-role="page" id="proprietors">
+            <div data-role="header">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <!-- add custom icons for these navbar links -->
+                        <li><a href="#about" data-icon="nb-about">About Us</a></li>
+                        <li><a href="#proprietors" class="ui-btn-active ui-state-persist" data-icon="nb-proprietors">Proprietors</a></li>
+                        <li><a href="#history" data-icon="nb-history">History</a></li>
+                    </ul>
+                </div>
+                <h2>N&B: Proprietors</h2>
+            </div>
+            <div data-role="content">
+                <p>Proprietors defui uxor tristique sudo, ex luctus aptent esse tego.</p>
+            </div>
+            <div data-role="footer">
+                <h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+                <!-- add a button pointing to the homepage, with the small Nan & Bob's logo -->
+            </div>
+        </div>
+        <div data-role="page" id="history">
+            <div data-role="header">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <!-- add custom icons for these navbar links -->
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#proprietors">Proprietors</a></li>
+                        <li><a href="#history" class="ui-btn-active ui-state-persist">History</a></li>
+                    </ul>
+                </div>
+                <h2>N&B: History</h2>
+            </div>
+            <div data-role="content">
+                <p>History decet molior, saepius antehabeo comis, pala ea, ratis, duis. Tristique epulae eu in feugait, quis ad pertineo et.</p>
+            </div>
+            <div data-role="footer">
+                <h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+                <!-- add a button pointing to the homepage, with the small Nan & Bob's logo -->
+            </div>
+        </div>
+    </body>
+</html>

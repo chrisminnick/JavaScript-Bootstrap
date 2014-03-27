@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jazz Calendar - Local Live Jazz Music Events</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/accelerometer.css" />
+	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+	<style type="text/css">
+	#no {
+		display: none;
+	}
+	#note {
+		position:absolute;
+		top: 50px;
+		left: 50px;
+	}
+	#saxbell {
+		position:absolute;
+		top: 240px;
+		left: 200px;
+	}
+	#yes {
+		position:relative;
+		height:300px;
+		width:245px
+	}
+	</style>
+	<script>
+	// Position Variables
+	var x = 0;
+	var y = 0;
+	// Speed - Velocity
+	var vx = 0;
+	var vy = 0;
+	// Acceleration
+	var ax = 0;
+	var ay = 0;
+	var delay = 10;
+	var vMultiplier = 0.01;
+	window.onload = function() {
+		if (window.DeviceMotionEvent==undefined) {
+		//if we can't use DeviceMotionEvent, hide the "#yes" block:
+		document.getElementById("no").style.display="block";
+		document.getElementById("yes").style.display="none";
+		} else {
+		//if we can use DeviceMotionEvent, set ax and ay to be 
+				x and y acceleration:
+		window.ondevicemotion = function(event) {
+		ax = event.accelerationIncludingGravity.x;
+		ay = event.accelerationIncludingGravity.y;
+		}
+		setInterval(function() {
+		//set the boundaries of the playing surface:
+		max_x = 240;
+		max_y = 300;
+		sax_x = 200;
+		sax_y = 240;
+		//get the x and y components of velocity:
+		vy = vy + -(ay);
+		vx = vx + ax;
+		var note = document.getElementById("note");
+		//get the x and y location coordinates:
+		y = parseInt(y + vy * vMultiplier);
+		x = parseInt(x + vx * vMultiplier);
+		//don't let the note go off the screen:
+		if (x<0) { x = 0; vx = 0; }
+		if (y<0) { y = 0; vy = 0; }
+		if (x>max_x-20) { x = max_x-20; vx = 0; }
+		if (y>max_y-20) { y = max_y-20; vy = 0; }
+		win_msg = 'Keep playing...';
+		//if the note hits the sax, print success message:
+		if (x > sax_x && y > sax_y) {
+		  win_msg = 'You win!';
+		}
+		//display the coordinate of the note:
+		note.style.top = y + "px";
+		note.style.left = x + "px";
+		document.getElementById("pos").innerHTML = win_msg + "<br>x=" + x + "<br>y=" + y;
+		}, delay);
+	  }
+	};
+</script>
+</head>
+
+<body>
+	<div id="container">
+	<div id="main">
+		<header>
+		<img src="images/logo.gif" alt="Jazz Calendar" />
+		<h3 id="tagline">Local jazz info</h3>
+		</header>
+		<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="performances.html">Performances</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+		</nav>
+		<div id="maincontent">
+			<article>
+			<p>Get the note in the sax!</p>
+			<div id="yes">
+				<img src="images/note.png" id="note">
+				<img src="images/saxbell.png" id="saxbell">
+			</div>
+			<div id="no">Your browser does not support Device Orientation and Motion API. Try this sample with iPhone, iPod or iPad with iOS 4.2+.</div>
+			<div id="pos"></div>
+			</article>
+		</div>
+		<aside id="sidebar">
+			<h3>Signup</h3>
+			<p>Become a member of Jazz Calendar now! <a href="#">Email us</a> to receive frequent notices on upcoming live shows.</p>
+		</aside>
+		<footer id="contactinfo">
+		<p>Jazz Calendar
+		<br />123 Fake Street, Sometown, USA | 555-123-4567</p>
+		</footer>
+	</div>
+	</div>
+</body>
+</html>

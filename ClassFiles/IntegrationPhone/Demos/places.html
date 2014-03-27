@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Nan &amp; Bob's</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+		<script type="text/javascript">
+			$(document).on('pageinit', function() {
+				//listen for clicks on the "Find Stuff Near Me" button:
+				$('#findme').click(function() {
+					if (navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(locateSuccess, locateFail);
+					}		
+				});
+			});
+			function locateSuccess(loc) {
+				geonames.search(loc.coords.latitude,loc.coords.longitude);
+			}
+			function locateFail(geoPositionError) {
+				switch (geoPositionError.code) {
+					// UNKNOWN_ERROR
+					case 0:
+						alert('An unknown error occurred, sorry');
+						break;
+					// PERMISSION_DENIED
+					case 1:
+						alert('Permission to use Geolocation was denied');
+						break;
+					// POSITION_UNAVAILABLE
+					case 2:
+						alert('Couldn\'t find you...');
+						break;
+					// TIMEOUT
+					case 3:
+						alert('The Geolocation request took too long and timed out');
+						break;
+					default:
+				}
+			}
+			var geonames = {};
+			geonames.search = function(lat,lng) {
+				// retrieve data from Geonames in JSON format
+				$.getJSON('http://ws.geonames.org/findNearbyWikipediaJSON?formatted=true&lat=' + lat + '&lng=' + lng + '&style=full&radius=10&maxRows=5', function(data) {
+					// iterate over results and add to DOM
+					$.each(data.geonames, function() {
+						$('<li></li>')
+						.append('<a href="http://'+this.wikipediaUrl+'" target="_blank"><h2>'+this.title+'</h2><p>'+ this.summary + '</p><span class="ui-li-aside">'+this.distance+' km</span></a>')
+						.appendTo('#placelist');
+					});
+					// change to "Places" page
+					$.mobile.changePage('#places');
+				
+					// refresh the list
+					$('#placelist').listview('refresh');
+				});
+			};
+		</script>
+	</head>
+	<body>
+		<div data-role="page" id="home">
+			<div data-role="header">
+				<h2>Nan &amp; Bob's</h2>
+			</div>
+			<div data-role="content">
+				<input type="button" value="Find Stuff Near Me" id="findme">
+			</div>
+			<div data-role="footer">
+				<h3>
+					123 Fake St. Anywhere USA
+				</h3>
+			</div>
+		</div>
+		<div data-role="page" id="places">
+			<div data-role="header">
+				<h2>N&amp;B's: Places</h2>
+			</div>
+			<div data-role="content">
+				<ul id="placelist" data-role="listview"></ul>
+			</div>
+			<div data-role="footer">
+				<h3>
+					123 Fake St. Anywhere USA
+				</h3>
+			</div>
+		</div>
+	</body>
+</html>

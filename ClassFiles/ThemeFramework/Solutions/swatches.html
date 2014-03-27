@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Nan & Bob's</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="home">
+			<div data-role="header">
+				<h2>Nan & Bob's</h2>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-theme="b">
+					<li><a href="#page2">Page 2</a></li>
+					<li><a href="#page3">Page 3</a></li>
+				</ul>
+			</div>
+			<div data-role="footer">
+				<h3>
+					123 Fake St. Anywhere USA
+				</h3>
+			</div>
+		</div>
+		<div data-role="page" id="page2" data-add-back-btn="true" data-theme="e">
+			<div data-role="header">
+				<h2>N&B: Page 2</h2>
+			</div>
+			<div data-role="content">
+				<p>Page 2 decet molior, saepius antehabeo comis, pala ea, ratis, duis. Tristique epulae eu in feugait, quis ad pertineo et.</p>
+				<ul data-role="listview" data-inset="true">
+					<li><a href="#page3">Page 3</a></li>
+					<li><a href="http://www.google.com">Google</a></li>
+				</ul>
+				<a href="#home" data-role="button" data-theme="a">Home</a>
+			</div>
+			<div data-role="footer" data-theme="d">
+				<h3>
+					123 Fake St. Anywhere USA
+				</h3>
+			</div>
+		</div>
+		<div data-role="page" id="page3" data-add-back-btn="true">
+			<div data-role="header">
+				<h2>N&B: Page 3</h2>
+			</div>
+			<div data-role="content">
+				<form action="#">
+					<div data-role="fieldcontain">
+						<label for="name">Text Input:</label>
+						<input type="text" name="name" id="name" data-theme="a">
+					</div>
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<legend>Checkboxes</legend>
+							<input type="checkbox" name="cb" id="cb-1" data-theme="b">
+							<label for="cb-1">CB 1</label>
+							<input type="checkbox" name="cb" id="cb-2" data-theme="d">
+							<label for="cb-2">CB 2</label>
+							<input type="checkbox" name="cb" id="cb-3" data-theme="e">
+							<label for="cb-3">CB 3</label>
+						</fieldset>
+					</div>
+				</form>
+				<a href="#home" data-role="button" data-theme="e">Home</a>
+			</div>
+			<div data-role="footer">
+				<h3>
+					123 Fake St. Anywhere USA
+				</h3>
+			</div>
+		</div>
+	</body>
+</html>

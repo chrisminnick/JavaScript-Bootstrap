@@ -1,0 +1,352 @@
+
+
+
+
+DELETE THIS FILE
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Nan &amp; Bob's Online</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+        <style type="text/css">
+            h2 {
+                white-space: normal !important;
+            }
+            ul li a h3 {
+                white-space: normal !important;
+            }
+        </style>
+        <script>
+            $(document).on('swipeleft', '.bookdetail', function() {
+                if($(this).next('.bookdetail').length == 0) {
+                    $.mobile.changePage($('.bookdetail').first());
+                } else {
+                    $.mobile.changePage($(this).next('.bookdetail'));
+                }
+            });
+            $(document).on('swiperight', '.bookdetail', function() {
+                if($(this).prev('.bookdetail').length == 0) {
+                    $.mobile.changePage($('.bookdetail').last(0));
+                } else {
+                    $.mobile.changePage($(this).prev('.bookdetail'));
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div data-role="page" id="home">
+            <div data-role="header">
+                <h2>Nan &amp; Bob's Online</h2>
+                <div data-role="navbar">
+					<ul>
+                        <li><a href="#home" class="ui-btn-active ui-state-persist" data-icon="home">Home</a></li>
+                        <li><a href="#books" data-icon="grid">Books</a></li>
+                        <li><a href="#eats" data-icon="star">Eats</a></li>
+                    </ul>
+				</div>
+            </div>
+            <div data-role="content">
+                <p>Home content</p>
+            </div>
+            <div data-role="footer">
+                <h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+            </div>
+        </div>
+        <div data-role="page" id="books">
+            <div data-role="header">
+                <h2>N&amp;B: Books</h2>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-split-icon="plus" data-filter="true">
+                    <li><a href="#book1">
+                        <img src="images/book1.jpg" />
+                        <h3>Some Like it Mobile</h3>
+                        <p>by Artemus Frowl</p>
+                        </a><a href="#purchaseconfirm" data-transition="pop">Purchase</a></li>
+                    <li><a href="#book2">
+                        <img src="images/book2.jpg" />
+                        <h3>Phone, or Not to Phone</h3>
+                        <p>by Annie Derisive</p>
+                        </a><a href="#purchaseconfirm" data-transition="pop">Purchase</a></li>
+                    <li><a href="#book3">
+                        <img src="images/book3.jpg" />
+                        <h3>Query my Query</h3>
+                        <p>by Alaistair Crooke</p>
+                        </a><a href="#purchaseconfirm" data-transition="pop">Purchase</a></li>
+                    <li><a href="#book4">
+                        <img src="images/book4.jpg" />
+                        <h3>I Phone, iPhone</h3>
+                        <p>by Apollonia Mack</p>
+                        </a><a href="#purchaseconfirm" data-transition="pop">Purchase</a></li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#books" class="ui-btn-active ui-state-persist">Books</a></li>
+						<li><a href="#eats">Eats</a></li>
+					</ul>
+				</div>
+				<h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+            </div>
+        </div>
+        <div data-role="page" id="book1" data-add-back-btn="true" class="bookdetail">
+            <div data-role="header">
+                <h2>N&amp;B: Book Detail</h2>
+            </div>
+            <div data-role="content">
+                <h3>Some Like it Mobile</h3>
+                <p>by Artemus Frowl</p>
+                <p>Occuro ea luptatum, pneum natu minim demoveo cogo distineo esse. Paratus, utinam abigo mos usitas typicus dolore, lobortis distineo sudo, saluto valetudo iusto.</p>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#books" class="ui-btn-active ui-state-persist">Books</a></li>
+                        <li><a href="#eats">Eats</a></li>
+                    </ul>
+                </div>
+                <h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+            </div>
+        </div>
+        <div data-role="page" id="book2" data-add-back-btn="true" class="bookdetail">
+            <div data-role="header">
+                <h2>N&amp;B: Book Detail</h2>
+            </div>
+            <div data-role="content">
+                <h3>Phone, or Not to Phone</h3>
+                <p>by Annie Derisive</p>
+                <p>Tego defui molior ingenium ad, nostrud, nimis saluto lucidus et causa causa iusto qui. Secundum, nostrud os rusticus mos, singularis singularis importunus vulputate.</p>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#books" class="ui-btn-active ui-state-persist">Books</a></li>
+                        <li><a href="#eats">Eats</a></li>
+                    </ul>
+                </div>
+                <h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+            </div>
+        </div>
+        <div data-role="page" id="book3" data-add-back-btn="true" class="bookdetail">
+            <div data-role="header">
+                <h2>N&amp;B: Book Detail</h2>
+            </div>
+            <div data-role="content">
+                <h3>Query my Query</h3>
+                <p>by Alaistair Crooke</p>
+                <p>Consequat quibus mauris tristique et validus zelus esse vel ventosus, odio ex pertineo letalis facilisis. Premo imputo nostrud, et in nostrud, duis volutpat conventio defui.</p>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#books" class="ui-btn-active ui-state-persist">Books</a></li>
+                        <li><a href="#eats">Eats</a></li>
+                    </ul>
+                </div>
+                <h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+            </div>
+        </div>
+        <div data-role="page" id="book4" data-add-back-btn="true" class="bookdetail">
+            <div data-role="header">
+                <h2>N&amp;B: Book Detail</h2>
+            </div>
+            <div data-role="content">
+                <h3>I Phone, iPhone</h3>
+                <p>by Apollonia Mack</p>
+                <p>Te lobortis genitus sagaciter probo natu vero ventosus. Duis gilvus cogo interdico nunc transverbero humo praemitto persto similis pagus praesent sit.</p>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#books" class="ui-btn-active ui-state-persist">Books</a></li>
+                        <li><a href="#eats">Eats</a></li>
+                    </ul>
+                </div>
+                <h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+            </div>
+        </div>
+        <div data-role="page" id="eats">
+            <div data-role="header">
+                <h2>N&amp;B: Eats</h2>
+            </div>
+            <div data-role="content">
+				<div data-role="collapsible-set">
+					<div data-role="collapsible">
+						<h3>Cupcakes</h3>
+						<div class="ui-grid-a">
+		                    <div class="ui-block-a">Who doesn't love cupcakes?</div>
+		                    <div class="ui-block-b"><a href="#purchaseconfirm" data-role="button" data-mini="true">$3</a></div>
+		                </div>
+					</div>
+					<div data-role="collapsible">
+						<h3>Scones</h3>
+						<div class="ui-grid-a">
+		                    <div class="ui-block-a">Mmmm. Scones.</div>
+		                    <div class="ui-block-b"><a href="#purchaseconfirm" data-role="button" data-mini="true">$4</a></div>
+		                </div>
+					</div>
+					<div data-role="collapsible">
+						<h3>Cannoli</h3>
+						<div class="ui-grid-a">
+		                    <div class="ui-block-a">Take the Cannoli.</div>
+		                    <div class="ui-block-b"><a href="#purchaseconfirm" data-role="button" data-mini="true">$5</a></div>
+		                </div>
+					</div>
+				</div>
+            </div>
+            <div data-role="footer">
+            	<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#books">Books</a></li>
+						<li><a href="#eats" class="ui-btn-active ui-state-persist">Eats</a></li>
+					</ul>
+				</div>
+				<h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+            </div>
+        </div>
+        <div data-role="page" id="checkout">
+            <div data-role="header">
+                <h2>N&amp;B: Checkout</h2>
+            </div>
+            <div data-role="content">
+            	<p>Your Order: 2 Items, $10.50</p>
+                <form action="#thanks" method="post" id="orderform" data-ajax="false">
+                    <div data-role="fieldcontain">
+                        <label for="fname">First Name</label>
+                        <input type="text" name="fname" id="fname">
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <label for="lname">Last Name</label>
+                        <input type="text" name="lname" id="lname">
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <label for="address">Shipping Address</label>
+                        <textarea cols="40" rows="6" name="address" id="address"></textarea>
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" name="dob" id="dob">
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <label for="shipping" class="select">Shipping</label>
+                        <select name="shipping" id="shipping">
+                            <option value="slow">Slow &amp; Cheap</option>
+                            <option value="fast">Fast &amp; Dear</option>
+                            <option value="surprise">Surprise Me</option>
+                        </select>
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <label for="rateservice">Rate Our Service (0-low, 10-high)</label>
+                        <input type="range" name="rateservice" id="rateservice" value="5" min="0" max="10" data-highlight="true">
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <legend>How did you hear of us?</legend>
+                            <input type="checkbox" name="hearofus" id="hearofus-web">
+                            <label for="hearofus-web">Web</label>
+
+                            <input type="checkbox" name="hearofus" id="hearofus-newspaper">
+                            <label for="hearofus-newspaper">Newspaper</label>
+
+                            <input type="checkbox" name="hearofus" id="hearofus-other">
+                            <label for="hearofus-other">Other</label>
+                        </fieldset>
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <label for="notes">Additional Notes</label>
+                        <textarea cols="40" rows="6" name="notes" id="notes"></textarea>
+                    </div>
+
+                    <div data-role="fieldcontain">
+                        <input type="submit" name="submit-button-1" id="submit-button-1" value="Submit">
+                    </div>
+
+                </form>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#books">Books</a></li>
+                        <li><a href="#eats">Eats</a></li>
+                    </ul>
+                </div>
+                <h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+            </div>
+        </div>
+        <div data-role="page" id="thanks">
+            <div data-role="header">
+                <h2>N&amp;B: Thanks</h2>
+            </div>
+            <div data-role="content">
+                <h3>Thanks!</h3>
+                <p>Your order is on the way.</p>
+            </div>
+            <div data-role="footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#books">Books</a></li>
+                        <li><a href="#eats">Eats</a></li>
+                    </ul>
+                </div>
+                <h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+            </div>
+        </div>
+        <div data-role="dialog" id="purchaseconfirm">
+            <div data-role="header">
+                <h2>Purchase This Item?</h2>
+            </div>
+            <div data-role="content">
+                <a href="#checkout" data-role="button">Yes</a>
+                <a href="#" data-role="button" data-rel="back">No</a>
+            </div>
+            <div data-role="footer">
+                <p>Buy at Nan &amp; Bob's!</p>
+            </div>
+        </div>
+    </body>
+</html>

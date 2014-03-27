@@ -1,0 +1,55 @@
+body {
+	font-family:Georgia,serif;
+	background-image:url('../images/bg_grass.jpg');
+}
+
+a {
+	text-decoration:none;
+	color:#4040AD;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+#container {
+	margin:0 auto;
+	background:#fff;
+}
+
+header {
+	background-color:#d0b462;
+}
+
+header h3#tagline {
+	/* tagline styles to go here */
+}
+
+header #logo {
+	margin:10px 0 10px 36px;
+}
+
+/* nav styles to go here */
+
+#maincontent {
+	/* main content styles to go here */
+}
+
+#maincontent h1 {
+	font-size:36px;
+	margin:5px 0 20px 0;
+}
+
+/* #maincontent .game styles to go here */
+	
+
+/* #sidebar styles to go here */
+
+#footerinfo {
+	clear: both;
+	background-color:#151570;
+	padding:10px 0 10px 36px;
+}
+#footerinfo p {
+	color:#fff;
+}

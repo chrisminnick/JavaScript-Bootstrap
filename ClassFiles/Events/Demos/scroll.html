@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Nan &amp; Bob's</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+		<style>
+			.scrolling {
+				font-style:italic;
+			}
+		</style>
+		<script>
+			$(document).on('scrollstart', function() {
+				$('p').addClass('scrolling');
+			});
+			$(document).on('scrollstop', function() {
+				$('p').removeClass('scrolling');
+			});
+		</script>
+	</head>
+	<body>
+		<div data-role="page" id="home">
+			<div data-role="header">
+				<h2>Nan &amp; Bob's</h2>
+			</div>
+			<div data-role="content">
+				<p>Lorem ipsum dolor sit amet, nunc rusticus illum dolor, delenit facilisi minim, tamen comis nisl plaga vero facilisi. Ulciscor foras fatua at, foras paratus. Scisco eu autem blandit obruo acsi regula lobortis dignissim sed wisi quae, feugait. Nulla zelus enim aliquip nulla molior nutus, pneum, esca nunc abbas. Capio molior, aliquip, roto, nullus, aptent fatua.</p>
+				<p>Vero demoveo inhibeo adipiscing regula patria, tincidunt vulputate, eu, feugiat ne ut abdo. Nobis sed consequat nulla tamen ut vindico vulputate illum autem adipiscing et utinam jumentum et. Eros et, epulae illum et at, ullamcorper ea abbas nulla vero aliquip verto odio.</p>
+				<p>Augue accumsan vel, dolor tamen ille nulla esca sed vindico indoles, refero augue vel. Molior ventosus ille vel roto pecus abdo aliquip praesent suscipere luctus importunus lobortis camur. Eu ratis fatua eu, oppeto ne feugiat. Feugiat esca persto dolore luptatum tego autem. Vero ne, olim blandit, luptatum aliquip nostrud, volutpat quis facilisis augue. Humo fere diam quod incassum feugiat dolor verto accumsan indoles vulputate.</p>
+			</div>
+			<div data-role="footer">
+				<h3>
+					123 Fake St. Anywhere USA
+				</h3>
+			</div>
+		</div>
+	</body>
+</html>

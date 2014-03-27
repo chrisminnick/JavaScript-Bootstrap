@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Nan & Bob's</title>
+        <link rel="stylesheet" href="themes/webucator5.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile.structure-1.1.0.min.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+        <style>
+            #hometagline {
+                font-size:120%;
+            }
+            .ui-icon-nb-logo {
+                background: url("themes/images/nbhomeicon.png") no-repeat scroll 0 0 #fff;
+            }
+            .ui-icon-nb-about {
+                background: url("glyphish-icons/96-book.png") no-repeat scroll 50% 50% transparent;
+                border-radius:0;
+                width:18px;
+                height:26px;
+                right:14px !important;
+            }
+            .ui-icon-nb-proprietors {
+                background: url("glyphish-icons/29-heart.png") no-repeat scroll 0 0 transparent;
+                border-radius:0;
+                width:24px;
+                height:21px;
+            }
+            .ui-icon-nb-history {
+                background: url("glyphish-icons/178-city.png") no-repeat scroll 0 0 transparent;
+                border-radius:0;
+                width:23px;
+                height:27px;
+            }
+        </style>
+    </head>
+    <body>
+        <div data-role="page" id="home">
+            <div data-role="header">
+                <h2>Nan & Bob's</h2>
+            </div>
+            <div data-role="content">
+                <div class="ui-grid-a" style="padding-bottom:30px;padding-top:10px;">
+                    <div class="ui-block-a" style="text-align:right;"><img src="images/logo.png" alt="Nan & Bob's" style="padding-right:10px"></div>
+                    <div class="ui-block-b" id="hometagline"><strong>Books, Baked Goodies & More</strong> - locally owned and right downtown.</div>
+                </div>
+                <ul data-role="listview">
+                    <li data-icon="nb-about"><a href="#about">About Us</a></li>
+                    <li data-icon="nb-proprietors"><a href="#proprietors">Proprietors</a></li>
+                    <li data-icon="nb-history"><a href="#history">History</a></li>
+                </ul>
+            </div>
+            <div data-role="footer">
+                <h3>
+                    123 Fake St. Anywhere USA
+                    <br>Icons from <a href="http://glyphish.com/">Glyphish</a>
+                </h3>
+            </div>
+        </div>
+        <div data-role="page" id="about">
+            <div data-role="header">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li class="ui-btn-active ui-state-persist"><a href="#about" data-icon="nb-about">About Us</a></li>
+                        <li><a href="#proprietors" data-icon="nb-proprietors">Proprietors</a></li>
+                        <li><a href="#history" data-icon="nb-history">History</a></li>
+                    </ul>
+                </div>
+                <h2>N&B: About Us</h2>
+            </div>
+            <div data-role="content">
+                <p>About us paratus validus foras at praesent usitas probo sino esse vicis sagaciter ratis feugait loquor.</p>
+            </div>
+            <div data-role="footer">
+                <h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+                <a href="#home" data-icon="nb-logo">Home</a>
+            </div>
+        </div>
+        <div data-role="page" id="proprietors">
+            <div data-role="header">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li class="ui-btn-active ui-state-persist"><a href="#about" data-icon="nb-about">About Us</a></li>
+                        <li><a href="#proprietors" data-icon="nb-proprietors">Proprietors</a></li>
+                        <li><a href="#history" data-icon="nb-history">History</a></li>
+                    </ul>
+                </div>
+                <h2>N&B: Proprietors</h2>
+            </div>
+            <div data-role="content">
+                <p>Proprietors defui uxor tristique sudo, ex luctus aptent esse tego.</p>
+            </div>
+            <div data-role="footer">
+                <h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+                <a href="#home" data-icon="nb-logo">Home</a>
+            </div>
+        </div>
+        <div data-role="page" id="history">
+            <div data-role="header">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li class="ui-btn-active ui-state-persist"><a href="#about" data-icon="nb-about">About Us</a></li>
+                        <li><a href="#proprietors" data-icon="nb-proprietors">Proprietors</a></li>
+                        <li><a href="#history" data-icon="nb-history">History</a></li>
+                    </ul>
+                </div>
+                <h2>N&B: History</h2>
+            </div>
+            <div data-role="content">
+                <p>History decet molior, saepius antehabeo comis, pala ea, ratis, duis. Tristique epulae eu in feugait, quis ad pertineo et.</p>
+            </div>
+            <div data-role="footer">
+                <h3>
+                    123 Fake St. Anywhere USA
+                </h3>
+                <a href="#home" data-icon="nb-logo">Home</a>
+            </div>
+        </div>
+    </body>
+</html>

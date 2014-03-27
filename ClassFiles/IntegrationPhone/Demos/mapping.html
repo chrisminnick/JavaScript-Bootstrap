@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Nan &amp; Bob's</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="home">
+			<div data-role="header">
+				<h2>Nan &amp; Bob's</h2>
+			</div>
+			<div data-role="content">
+				<script type="text/javascript">
+					if (navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(locateSuccess, locateFail);
+					}
+					function locateSuccess(loc) {
+						latitude = loc.coords.latitude;
+						longitude = loc.coords.longitude;
+						alert('You are at ' + latitude + ', ' + longitude);
+					}
+					function locateFail(geoPositionError) {
+						switch (geoPositionError.code) {
+							// UNKNOWN_ERROR
+							case 0:
+								alert('An unknown error occurred, sorry');
+								break;
+							// PERMISSION_DENIED
+							case 1:
+								alert('Permission to use Geolocation was denied');
+								break;
+							// POSITION_UNAVAILABLE
+							case 2:
+								alert('Couldn\'t find you...');
+								break;
+							// TIMEOUT
+							case 3:
+								alert('The Geolocation request took too long and timed out');
+								break;
+							default:
+						}
+					}
+				</script>
+			</div>
+			<div data-role="footer">
+				<h3>
+					123 Fake St. Anywhere USA
+				</h3>
+			</div>
+		</div>
+	</body>
+</html>

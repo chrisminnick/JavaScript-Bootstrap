@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Soccer Pickup</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <link rel="apple-touch-icon" href="images/icon.png" />
+  <script type="text/javascript">
+	(function( win ){
+	  var doc = win.document;
+	  
+	  // If there's a hash, or addEventListener is undefined, stop here
+	  if( !location.hash && win.addEventListener ){
+		
+		//scroll to 1
+		window.scrollTo(0, 1);
+		var scrollTop = 1,
+		  getScrollTop = function(){
+			return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
+		  }
+		
+		  //reset to 0 on bodyready, if needed
+		  bodycheck = setInterval(function(){
+			if(doc.body){
+			  clearInterval(bodycheck);
+			  scrollTop = getScrollTop();
+			  win.scrollTo(0, scrollTop === 1 ? 0 : 1);
+			} 
+		  }, 15 );
+		
+		win.addEventListener("load", function(){
+		  setTimeout(function(){
+			//at load, if user hasn't scrolled more than 20 or so...
+			if( getScrollTop() < 20 ){
+			  //reset to hide addr bar at onload
+			  win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+			}
+		  }, 0);
+		} );
+	  }
+	})(this);
+  </script>
+</head>
+
+<body>
+  <div id="container">
+	<header>
+	  <a href="index.html"><img src="images/logo.png" alt="Soccer Pickup" id="logo" /></a>
+	  <nav id="mainnav">
+		<ul>
+		  <li><a href="index.html">Home</a></li>
+		  <li><a href="find-a-game.html">Find a Game</a></li>
+		  <li><a href="about.html">About</a></li>
+		  <li><a href="contact.html">Contact</a></li>
+		</ul>
+	  </nav>
+	</header>
+	<div id="maincontent">
+		<h1>About Us</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<aside id="sidebar">
+		<h3>About Us</h3>
+		<p>Soccer Pickup is your source for finding local recreational soccer games for adults. Leagues are great - but sometimes you just want to lace up your boots and find an informal game. Check back often to find a game near you!</p>
+	</aside>
+	<footer id="footerinfo">
+	  <p>Soccer Pickup: Your guide to finding a game.</p>
+	</footer>
+  </div>
+</body>
+</html>
