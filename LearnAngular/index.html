@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+
+</head>
+<body>
+  <div class="container"
+  		ng-init="names=['Joe','John','Mary']">
+    Name: <input type="text" ng-model="name" /> {{ name }}
+    <ul>
+    	<li ng-repeat="name in names">{{ name }}</li>
+    </ul>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+</body>
+</html>
